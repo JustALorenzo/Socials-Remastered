@@ -15,6 +15,7 @@ public class Config {
     }
 
     public void setup() {
+
        plugin.getConfig().options().copyDefaults(true);
 
     }

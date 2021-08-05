@@ -18,7 +18,15 @@ public class Main extends JavaPlugin {
         SimpleBinderModule injectThisClass = new SimpleBinderModule(this);
         Injector injector = injectThisClass.createInjector();
         injector.injectMembers(this);
-        this.getCommand("discord").setExecutor(commands);
+
+        CommandHandler CH = new CommandHandler();
+
+        for(String cmds : commandList){
+        this.getCommand(cmds).setExecutor(CH);
+        }
+        this.saveDefaultConfig();
+        Config config = new Config(); //constructor will make config.yml
+
 
     }
     public void onDisable() {

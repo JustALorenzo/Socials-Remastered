@@ -1,3 +1,5 @@
+me\justalorenzo\socials\Config.class
+me\justalorenzo\socials\commands\ConfigCommands.class
 me\justalorenzo\socials\commands\CommandHandler.class
 me\justalorenzo\socials\Main.class
 me\justalorenzo\socials\SimpleBinderModule.class

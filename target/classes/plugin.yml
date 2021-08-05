@@ -3,6 +3,36 @@ main: me.justalorenzo.socials.Main
 version: 1.0
 
 commands:
+  youtube:
+    usage: </command>
+    description: youtube link
+  facebook:
+    usage: </command>
+    description: facebook link
+  twitter:
+    usage: </command>
+    description: twitter link
+  tiktok:
+    usage: </command>
+    description: tiktok link
   discord:
     usage: </command>
-    description: Gives you a Discord link!
+    description: discord link
+  twitch:
+    usage: </command>
+    description: twitch link
+  github:
+    usage: </command>
+    description: github link
+  spotify:
+    usage: </command>
+    description: spotify link
+  steam:
+    usage: </command>
+    description: steam link
+  reddit:
+    usage: </command>
+    description: reddit link
+  instagram:
+    usage: </command>
+    description: instagram link
