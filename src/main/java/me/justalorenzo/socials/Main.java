@@ -9,9 +9,12 @@ public class Main extends JavaPlugin {
 
     CommandHandler commands = new CommandHandler();
 
+
+
+    public static String[] commandList = {"Discord"};
     public void onEnable() {
         this.getLogger().info("Socials Started");
-
+        //fetch dependencies
         SimpleBinderModule injectThisClass = new SimpleBinderModule(this);
         Injector injector = injectThisClass.createInjector();
         injector.injectMembers(this);

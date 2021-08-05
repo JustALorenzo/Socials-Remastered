@@ -13,6 +13,7 @@ public class SimpleBinderModule extends AbstractModule {
     // dependency injection as in we inject plugin through Main whenever this is called
     public SimpleBinderModule(Main plugin) {
         this.plugin = plugin;
+
     }
 
     public Injector createInjector() {
@@ -23,6 +24,7 @@ public class SimpleBinderModule extends AbstractModule {
     protected void configure() {
             //tells the binder to use our plugin instance whenever asked for
         this.bind(Main.class).toInstance(this.plugin);
+
     }
 
 
