@@ -1,0 +1,8 @@
+name: Socials
+main: me.justalorenzo.socials.Main
+version: 1.0
+
+commands:
+  discord:
+    usage: </command>
+    description: Gives you a Discord link!
