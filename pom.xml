@@ -16,7 +16,7 @@
     <dependency>
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
-        <version>5.0.1</version>
+        <version>4.0</version>
     </dependency>
     <!--This adds the Spigot API artifact to the build -->
     <dependency>
@@ -24,6 +24,11 @@
         <artifactId>spigot-api</artifactId>
         <version>1.8.8-R0.1-SNAPSHOT</version>
         <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.google.inject.extensions</groupId>
+        <artifactId>guice-multibindings</artifactId>
+        <version>4.0</version>
     </dependency>
 
 </dependencies>
