@@ -11,7 +11,7 @@ public class Main extends JavaPlugin {
 
 
 
-    public static String[] commandList = {"Discord"};
+    public static String[] commandList = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch", "github", "spotify", "steam", "reddit", "instagram"};
     public void onEnable() {
         this.getLogger().info("Socials Started");
         //fetch dependencies
