@@ -1,5 +1,5 @@
 name: Socials
-main: me.justalorenzo.socials.Main
+main: me.justalorenzo.socials.Socials
 version: 1.0
 
 commands:

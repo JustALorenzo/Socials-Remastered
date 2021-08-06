@@ -6,7 +6,7 @@ import com.google.inject.Inject;
 public class Config {
     //save config etc
     @Inject
-    private Main plugin;
+    private Socials plugin;
 
     public void Config(){
         //whenever loaded
