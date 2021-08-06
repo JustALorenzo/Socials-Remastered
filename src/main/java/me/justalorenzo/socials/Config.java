@@ -1,7 +1,7 @@
 package me.justalorenzo.socials;
 
 import com.google.inject.Inject;
-import org.bukkit.configuration.file.FileConfiguration;
+
 
 public class Config {
     //save config etc

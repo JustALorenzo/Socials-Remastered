@@ -1,6 +1,5 @@
 package me.justalorenzo.socials.commands;
 
-import com.google.inject.Inject;
 import me.justalorenzo.socials.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,7 +10,7 @@ public class CommandHandler implements CommandExecutor {
 // String[] commands  = Main().getCommandList();
 
     //quick dirty method instead of injection
-String[] commands = Main.commandList;
+String[] commands = Main.commandLinkList;
 
 
 

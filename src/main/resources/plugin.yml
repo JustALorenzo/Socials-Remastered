@@ -36,3 +36,6 @@ commands:
   instagram:
     usage: </command>
     description: instagram link
+  set:
+    usage: </command>
+    description: set [discord|tiktok|twitter|....] "www.example.com"

@@ -4,19 +4,20 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-
+//A binding is defined in an implementation of com.google.inject.AbstractModule
 public class SimpleBinderModule extends AbstractModule {
     private final Main plugin;
 
 
     // This is also dependency injection, but without any libraries/frameworks since we can't use those here yet.
-    // dependency injection as in we inject plugin through Main whenever this is called
+    // this is also some kind of dependency injection as in we inject plugin in the constructor
     public SimpleBinderModule(Main plugin) {
         this.plugin = plugin;
 
     }
 
     public Injector createInjector() {
+        // create Injector object using Guice class createInjector() method where we pass our injector class implementation object
         return Guice.createInjector(this);
     }
 
