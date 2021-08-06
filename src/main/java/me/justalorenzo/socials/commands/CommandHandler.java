@@ -10,8 +10,11 @@ public class CommandHandler implements CommandExecutor {
 //doing this would lead in initializing the Main.Java class twice which is not a good thing.
 // String[] commands  = Main().getCommandList();
 
-@Inject
-private String[] commandLinkList;
+    private Socials plugin;
+
+public CommandHandler(Socials plugin) {
+    this.plugin = plugin;
+}
 
 
     //temporary before injection fix
@@ -19,10 +22,10 @@ private String[] commandLinkList;
 
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
         for(String cmd : commandList) {
             if(command.getName().equalsIgnoreCase(cmd)) {
-                commandSender.sendMessage("wow you did a " + command.getName());
+                commandSender.sendMessage(plugin.getConfig().get(cmd).toString());
                 return true;
             }
         }

@@ -13,7 +13,7 @@ import java.util.Locale;
 public class ConfigCommands implements CommandExecutor {
 
 //    @Inject
-//    private Socials plugin;
+//   private Socials plugin;
     @Inject
     private String[] commandLinkList;
     @Inject

@@ -22,7 +22,7 @@ public class Socials extends JavaPlugin {
         injector.injectMembers(this);
 
 
-        CommandHandler CH = new CommandHandler();
+        CommandHandler CH = new CommandHandler(this);
         ConfigCommands CC = new ConfigCommands(this);
         for (String cmds : commandLinkList) {
             this.getCommand(cmds).setExecutor(CH);
