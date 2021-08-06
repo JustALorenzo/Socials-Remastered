@@ -6,9 +6,11 @@ commands:
   youtube:
     usage: </command>
     description: youtube link
+    aliases: [yt]
   facebook:
     usage: </command>
     description: facebook link
+    aliases: [fb]
   twitter:
     usage: </command>
     description: twitter link
@@ -18,12 +20,14 @@ commands:
   discord:
     usage: </command>
     description: discord link
+    aliases: [disc]
   twitch:
     usage: </command>
     description: twitch link
   github:
     usage: </command>
     description: github link
+    aliases: [git]
   spotify:
     usage: </command>
     description: spotify link
@@ -36,6 +40,15 @@ commands:
   instagram:
     usage: </command>
     description: instagram link
-  set:
+    aliases: [ig]
+  linktree:
+    usage: </command>
+    description: linktr.ee link
+  setlink:
     usage: </command>
     description: set [discord|tiktok|twitter|....] "www.example.com"
+
+permissions:
+  socials.set:
+    description:  Set social links
+    default: op
