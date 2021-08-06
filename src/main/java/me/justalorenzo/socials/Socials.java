@@ -18,7 +18,7 @@ public class Socials extends JavaPlugin {
     public void onEnable() {
         this.getLogger().info("Socials Started");
         //fetch dependencies
-        SimpleBinderModule injections = new SimpleBinderModule(this, COMMAND_LINK_LIST, SET_COMMAND);
+        SimpleBinderModule injections = new SimpleBinderModule(this);
         Injector injector = injections.createInjector();
         injector.injectMembers(this);
 

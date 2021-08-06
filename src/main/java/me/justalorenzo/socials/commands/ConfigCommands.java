@@ -1,21 +1,19 @@
 package me.justalorenzo.socials.commands;
 
 import com.google.inject.Inject;
-import me.justalorenzo.socials.Config;
 import me.justalorenzo.socials.Socials;
-import org.bukkit.Bukkit;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import java.util.Locale;
 
 public class ConfigCommands implements CommandExecutor {
     private final Socials plugin;
 
 
     @Inject
-    public  ConfigCommands(Socials plugin) {
+    public ConfigCommands(Socials plugin) {
         this.plugin = plugin;
     }
 
@@ -23,18 +21,12 @@ public class ConfigCommands implements CommandExecutor {
     boolean foundSocials;
 
     //temporary before injection fix
-    String[] commandList = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch", "github", "spotify", "steam", "reddit", "instagram"};
-
-
-
-
-
+    String[] commandList = Socials.COMMAND_LINK_LIST;
 
 
     //modify config lines
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-
 
 
         if (command.getName().equalsIgnoreCase("set")) {
@@ -46,14 +38,14 @@ public class ConfigCommands implements CommandExecutor {
                 for (String cmd : commandList) {
                     if (args[0].equalsIgnoreCase(cmd)) {
                         foundSocials = true;
+                        break;
                     }
                 }
                 if (foundSocials) {
                     //go to config & edit it
-                    if(plugin == null) {
+                    if (plugin == null) {
                         commandSender.sendMessage("Plugin instance is null...");
-                    }
-                    else {
+                    } else {
                         plugin.getConfig().set(args[0], args[1]);
                         plugin.saveConfig();
                         plugin.getLogger().info("Saved it!");
@@ -65,9 +57,8 @@ public class ConfigCommands implements CommandExecutor {
                 }
 
 
-                return true;
             }
-            return true;
+
         }
         return true;
     }

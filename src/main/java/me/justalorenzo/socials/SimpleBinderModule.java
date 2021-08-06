@@ -7,15 +7,13 @@ import com.google.inject.Injector;
 //A binding is defined in an implementation of com.google.inject.AbstractModule
 public class SimpleBinderModule extends AbstractModule {
     private final Socials plugin;
-    private String[] commandLinkList;
-    private String setCommand;
+
 
     // This is also dependency injection, but without any libraries/frameworks since we can't use those here yet.
     // this is also some kind of dependency injection as in we inject plugin in the constructor
-    public SimpleBinderModule(Socials plugin, String[] commandLinkList, String setCommand) {
+    public SimpleBinderModule(Socials plugin) {
         this.plugin = plugin;
-        this.commandLinkList = commandLinkList;
-        this.setCommand = setCommand;
+
     }
 
     public Injector createInjector() {
