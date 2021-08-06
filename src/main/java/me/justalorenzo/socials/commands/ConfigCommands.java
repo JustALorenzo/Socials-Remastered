@@ -3,6 +3,7 @@ package me.justalorenzo.socials.commands;
 import com.google.inject.Inject;
 import me.justalorenzo.socials.Socials;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -44,13 +45,11 @@ public class ConfigCommands implements CommandExecutor {
                     }
                     if (foundSocials) {
                         //go to config & edit it
-                        if (plugin == null) {
-                            commandSender.sendMessage("Plugin instance is null...");
-                        } else {
+
                             plugin.getConfig().set(args[0], args[1]);
                             plugin.saveConfig();
-                            plugin.getLogger().info("Saved it!");
-                        }
+                        commandSender.sendMessage(ChatColor.GREEN + args[1] + " has been set!");
+
 
                     } else {
                         //tell them we couldn't find  args[1]
