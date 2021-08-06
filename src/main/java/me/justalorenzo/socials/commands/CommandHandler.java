@@ -14,8 +14,8 @@ public class CommandHandler implements CommandExecutor {
 
     @Inject
     public CommandHandler(Socials plugin) {
-    this.plugin = plugin;
-}
+        this.plugin = plugin;
+    }
 
 
     String[] commandList = Socials.COMMAND_LINK_LIST;
@@ -23,8 +23,8 @@ public class CommandHandler implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        for(String cmd : commandList) {
-            if(command.getName().equalsIgnoreCase(cmd)) {
+        for (String cmd : commandList) {
+            if (command.getName().equalsIgnoreCase(cmd)) {
                 commandSender.sendMessage(plugin.getConfig().get(cmd).toString());
                 return true;
             }

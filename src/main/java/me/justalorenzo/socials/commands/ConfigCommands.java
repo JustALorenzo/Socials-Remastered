@@ -46,8 +46,8 @@ public class ConfigCommands implements CommandExecutor {
                     if (foundSocials) {
                         //go to config & edit it
 
-                            plugin.getConfig().set(args[0], args[1]);
-                            plugin.saveConfig();
+                        plugin.getConfig().set(args[0], args[1]);
+                        plugin.saveConfig();
                         commandSender.sendMessage(ChatColor.GREEN + args[1] + " has been set!");
 
 
