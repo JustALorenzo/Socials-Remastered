@@ -15,6 +15,7 @@ public class Socials extends JavaPlugin {
     public static final String[] COMMAND_LINK_LIST = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch", "github", "spotify", "steam", "reddit", "instagram"};
     public static final String SET_COMMAND = "set";
     @Inject private ConfigCommands configCommands;
+    @Inject private CommandHandler commandHandler;
     public void onEnable() {
         this.getLogger().info("Socials Started");
         //fetch dependencies
@@ -23,10 +24,10 @@ public class Socials extends JavaPlugin {
         injector.injectMembers(this);
 
 
-        CommandHandler CH = new CommandHandler(this);
+
 
         for (String cmds : COMMAND_LINK_LIST) {
-            this.getCommand(cmds).setExecutor(CH);
+            this.getCommand(cmds).setExecutor(commandHandler);
         }
         this.getCommand(SET_COMMAND).setExecutor(configCommands);
         this.saveDefaultConfig();

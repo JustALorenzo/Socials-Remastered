@@ -12,13 +12,13 @@ public class CommandHandler implements CommandExecutor {
 
     private Socials plugin;
 
-public CommandHandler(Socials plugin) {
+    @Inject
+    public CommandHandler(Socials plugin) {
     this.plugin = plugin;
 }
 
 
-    //temporary before injection fix
-    String[] commandList = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch", "github", "spotify", "steam", "reddit", "instagram"};
+    String[] commandList = Socials.COMMAND_LINK_LIST;
 
 
     @Override
