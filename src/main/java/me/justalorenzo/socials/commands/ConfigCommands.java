@@ -11,13 +11,13 @@ import org.bukkit.command.CommandSender;
 import java.util.Locale;
 
 public class ConfigCommands implements CommandExecutor {
+    private final Socials plugin;
 
-//    @Inject
-//   private Socials plugin;
+
     @Inject
-    private String[] commandLinkList;
-    @Inject
-    private String setCommand;
+    public  ConfigCommands(Socials plugin) {
+        this.plugin = plugin;
+    }
 
 
     boolean foundSocials;
@@ -25,13 +25,10 @@ public class ConfigCommands implements CommandExecutor {
     //temporary before injection fix
     String[] commandList = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch", "github", "spotify", "steam", "reddit", "instagram"};
 
-    Socials plugin;
 
 
 
-    public  ConfigCommands(Socials plugin) {
-        this.plugin = plugin;
-    }
+
 
 
     //modify config lines
