@@ -10,7 +10,7 @@ public class CommandHandler implements CommandExecutor {
 //doing this would lead in initializing the Main.Java class twice which is not a good thing.
 // String[] commands  = Main().getCommandList();
 
-    private Socials plugin;
+    final private Socials plugin;
 
     @Inject
     public CommandHandler(Socials plugin) {
@@ -18,7 +18,7 @@ public class CommandHandler implements CommandExecutor {
     }
 
 
-    String[] commandList = Socials.COMMAND_LINK_LIST;
+    final String[] commandList = Socials.COMMAND_LINK_LIST;
 
 
     @Override

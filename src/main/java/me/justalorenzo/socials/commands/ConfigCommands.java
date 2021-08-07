@@ -3,7 +3,6 @@ package me.justalorenzo.socials.commands;
 import com.google.inject.Inject;
 import me.justalorenzo.socials.Socials;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -23,8 +22,8 @@ public class ConfigCommands implements CommandExecutor {
     boolean foundSocials;
 
     //importing lists of commands, so they're global and, they don't have to be set individually for each update
-    String[] commandList = Socials.COMMAND_LINK_LIST;
-    String setCommand = Socials.SET_COMMAND;
+    final String[] commandList = Socials.COMMAND_LINK_LIST;
+    final String setCommand = Socials.SET_COMMAND;
 
     //modify config lines
     @Override

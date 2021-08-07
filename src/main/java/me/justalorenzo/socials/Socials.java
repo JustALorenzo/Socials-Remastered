@@ -10,12 +10,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@SuppressWarnings("unused")
 @Singleton
 public class Socials extends JavaPlugin {
 
 
     public static final String[] COMMAND_LINK_LIST = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch", "github", "spotify", "steam", "reddit", "instagram", "linktree"};
     public static final String SET_COMMAND = "setlink";
+    @SuppressWarnings("unused")
     @Inject
     private ConfigCommands configCommands;
     @Inject
