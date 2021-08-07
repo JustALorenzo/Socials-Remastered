@@ -47,6 +47,18 @@ commands:
   setlink:
     usage: </command>
     description: set [discord|tiktok|twitter|....] "www.example.com"
+  website:
+    usage: </command>
+    description:  personal website
+  patreon:
+    usage: </command>
+    description: patreon
+  socials:
+    usage: </command>
+    description: opens a GUI with your socials.
+  info:
+    usage: </command>
+    description: info about the plugin.
 
 permissions:
   socials.set:
