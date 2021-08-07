@@ -34,17 +34,22 @@ public class OpenGUI implements CommandExecutor, Listener {
         createGUI();
     }
 
-int positioner = 2;
+
     public void createGUI() {
         //set GUI size & title
         GUI.setGUI(54, "Socials");
+        //add socials to hashmap starting with name then the base64 code
         HashMap<String, String> name_base64Texture = new HashMap<>();
         name_base64Texture.put("youtube", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJmNmMwN2EzMjZkZWY5ODRlNzJmNzcyZWQ2NDU0NDlmNWVjOTZjNmNhMjU2NDk5YjVkMmI4NGE4ZGNlIn19fQ==");
+      name_base64Texture.put("spotify", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU3OTJkMzhlNDE2OGQyNmRlNzc4Mzk4NGNhZmZmYzYwYjQ4ODM4ZDgxZjIyOTYwNzZmZTE0ZGVkZDYifX19");
         name_base64Texture.put("discord", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19");
-        name_base64Texture.put("spotify", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU3OTJkMzhlNDE2OGQyNmRlNzc4Mzk4NGNhZmZmYzYwYjQ4ODM4ZDgxZjIyOTYwNzZmZTE0ZGVkZDYifX19");
 
 
-        GUI.addItem(positioner++, name_base64Texture);
+        ArrayList<Integer> positions = new ArrayList<>();
+        for(int i = 0; i < 6; i++) {
+        positions.add(i*10);
+        }
+        GUI.addItem(positions, name_base64Texture);
        }
 
 

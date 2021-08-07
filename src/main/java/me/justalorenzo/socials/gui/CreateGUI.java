@@ -1,6 +1,7 @@
 package me.justalorenzo.socials.gui;
 
 
+import com.google.inject.Inject;
 import net.minecraft.server.v1_8_R3.Items;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -19,10 +20,9 @@ public class CreateGUI {
 
 
 
-
     //sets basic GUI information
     public void setGUI(int GUISize, String GUITitle) {
-        if(GUISize % 9 != 0) {
+        if (GUISize % 9 != 0) {
             this.GUISize = 9;
             //default it
         } else {
@@ -33,21 +33,19 @@ public class CreateGUI {
 
     }
 
-//    //pass item you want
-//    public void itemBuilder(ItemStack material, String itemName, String itemLore, int inventoryPosition) {
-//        ItemStack inventoryItem = new ItemStack(material);
-//        ItemMeta itemMeta = inventoryItem.getItemMeta();
-//        itemMeta.setDisplayName(itemName);
-//        itemMeta.setLore(Collections.singletonList(itemLore));
-//        inventoryItem.setItemMeta(itemMeta);
-//        addItem(inventoryPosition, inventoryItem);
-//    }
 
-    //Hashmap of NAME of head | and then | the itemstack itself
-    public void addItem(int position, HashMap<String, String> base64Values) {
 
-        for(String base64 : base64Values.values()) {
-socialsInventory.setItem(position+2, CustomHeads.create(base64));
+    public void addItem(ArrayList<Integer> positions, HashMap<String, String> base64Values) {
+        //loop through hashmap
+        for (String base64 : base64Values.values()) {
+            Bukkit.getServer().getLogger().info(base64);
+            for(int position : positions) { //not very efficient and quite literally o^2 but easy hotfix to make sure we never go out of bounds
+                socialsInventory.setItem(position+1, CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJmNmMwN2EzMjZkZWY5ODRlNzJmNzcyZWQ2NDU0NDlmNWVjOTZjNmNhMjU2NDk5YjVkMmI4NGE4ZGNlIn19fQ"));
+            socialsInventory.setItem(position+2, CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU3OTJkMzhlNDE2OGQyNmRlNzc4Mzk4NGNhZmZmYzYwYjQ4ODM4ZDgxZjIyOTYwNzZmZTE0ZGVkZDYifX19"));
+            socialsInventory.setItem(position+3, CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19"));
+
+            }
+
 
         }
 
