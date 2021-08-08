@@ -1,23 +1,20 @@
 package me.justalorenzo.socials.gui;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 import com.google.inject.Inject;
 import me.justalorenzo.socials.Socials;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
-import sun.security.krb5.internal.crypto.HmacSha1Aes128CksumType;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class OpenGUI implements CommandExecutor, Listener {
+public class OpenGUI implements CommandExecutor {
 
     /*
      * Make sure a player is executing the command!
@@ -39,20 +36,20 @@ public class OpenGUI implements CommandExecutor, Listener {
         //set GUI size & title
         GUI.setGUI(54, "Socials");
         //add socials to hashmap starting with name then the base64 code
-        HashMap<String, String> name_base64Texture = new HashMap<>();
-        name_base64Texture.put("youtube", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJmNmMwN2EzMjZkZWY5ODRlNzJmNzcyZWQ2NDU0NDlmNWVjOTZjNmNhMjU2NDk5YjVkMmI4NGE4ZGNlIn19fQ==");
-      name_base64Texture.put("spotify", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU3OTJkMzhlNDE2OGQyNmRlNzc4Mzk4NGNhZmZmYzYwYjQ4ODM4ZDgxZjIyOTYwNzZmZTE0ZGVkZDYifX19");
-        name_base64Texture.put("discord", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19");
+        HashMap<String, String> temp_map = new HashMap<>();
+
+        temp_map.put(ChatColor.RED +"YouTube", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJmNmMwN2EzMjZkZWY5ODRlNzJmNzcyZWQ2NDU0NDlmNWVjOTZjNmNhMjU2NDk5YjVkMmI4NGE4ZGNlIn19fQ==");
+        temp_map.put(ChatColor.DARK_PURPLE + "Twitch" , "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmYxOGZhNDNkNGQ5Mzc4OTQ4YjU2Yjg1YjUzMTk3OTA3NDExOWMxMjUyMzJlNzE1Y2U0YmQ1Mjc4MGFjNGQ3NiJ9fX0=");
+        temp_map.put(ChatColor.BLUE + "Discord", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19");
+        temp_map.put(ChatColor.LIGHT_PURPLE + "Instagram", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjViM2YyY2ZhMDczOWM0ZTgyODMxNmYzOWY5MGIwNWJjMWY0ZWQyN2IxZTM1ODg4NTExZjU1OGQ0Njc1In19fQ==");
+        temp_map.put(ChatColor.AQUA + "Twitter", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M3NDVhMDZmNTM3YWVhODA1MDU1NTkxNDllYTE2YmQ0YTg0ZDQ0OTFmMTIyMjY4MThjMzg4MWMwOGU4NjBmYyJ9fX0=");
+        temp_map.put(ChatColor.YELLOW + "Patreon", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTY5M2I2NmE1OTVmNzhhZjNmNTFmNGVmYTRjMTMzNzViMWI5NThlNmY0YzUwN2E0N2M0ZmU1NjVjYzI3NSJ9fX0=");
+        temp_map.put(ChatColor.WHITE + "Website", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjI3NGUxNjA1MjMzNDI1MDkxZjdiMjgzN2E0YmI4ZjRjODA0ZGFjODBkYjllNGY1OTlmNTM1YzAzYWZhYjBmOCJ9fX0=");
 
 
-        ArrayList<Integer> positions = new ArrayList<>();
-        for(int i = 0; i < 6; i++) {
-        positions.add(i*10);
-        }
-        GUI.addItem(positions, name_base64Texture);
-       }
-
-
+        BiMap<String, String> name_base64Texture = HashBiMap.create(temp_map);
+        GUI.addItem(name_base64Texture);
+    }
 
 
     @Override

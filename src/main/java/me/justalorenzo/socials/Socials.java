@@ -7,6 +7,7 @@ import com.google.inject.Singleton;
 import me.justalorenzo.socials.commands.CommandHandler;
 import me.justalorenzo.socials.commands.ConfigCommands;
 
+import me.justalorenzo.socials.gui.InventoryClick;
 import me.justalorenzo.socials.gui.OpenGUI;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.command.Command;
@@ -44,6 +45,8 @@ public class Socials extends JavaPlugin {
         //get our commands and pass them to the right commandExecutor
         initializeCommands();
         this.saveDefaultConfig(); //will make config.yml
+
+        this.getServer().getPluginManager().registerEvents(new InventoryClick(this), this );
 
     }
 

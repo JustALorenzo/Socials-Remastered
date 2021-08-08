@@ -1,23 +1,23 @@
 package me.justalorenzo.socials.gui;
 
 
-import com.google.inject.Inject;
-import net.minecraft.server.v1_8_R3.Items;
+import com.google.common.collect.BiMap;
+
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import org.bukkit.ChatColor;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
+
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.Map;
+
 
 public class CreateGUI {
 
     Inventory socialsInventory;
     int GUISize;
-
 
 
     //sets basic GUI information
@@ -34,19 +34,41 @@ public class CreateGUI {
     }
 
 
+    public void addItem(BiMap<String, String> name_value) {
+        int position = 8;
 
-    public void addItem(ArrayList<Integer> positions, HashMap<String, String> base64Values) {
-        //loop through hashmap
-        for (String base64 : base64Values.values()) {
-            Bukkit.getServer().getLogger().info(base64);
-            for(int position : positions) { //not very efficient and quite literally o^2 but easy hotfix to make sure we never go out of bounds
-                socialsInventory.setItem(position+1, CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDJmNmMwN2EzMjZkZWY5ODRlNzJmNzcyZWQ2NDU0NDlmNWVjOTZjNmNhMjU2NDk5YjVkMmI4NGE4ZGNlIn19fQ"));
-            socialsInventory.setItem(position+2, CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU3OTJkMzhlNDE2OGQyNmRlNzc4Mzk4NGNhZmZmYzYwYjQ4ODM4ZDgxZjIyOTYwNzZmZTE0ZGVkZDYifX19"));
-            socialsInventory.setItem(position+3, CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19"));
+        /*Get mapping value by key,
+        myBiMap.get("key");
+        Get mapping by value,
+        myBiMap.inverse().get("value");*/
+        boolean isLast = false;
+        for (Map.Entry<String, String> content : name_value.entrySet()) {
 
+            ItemStack head = CustomHeads.create(content.getValue().toString());
+            ItemMeta headMeta = head.getItemMeta();
+            headMeta.setDisplayName(content.getKey());
+            headMeta.setLore(Collections.singletonList(ChatColor.GREEN + "Available!"));
+            head.setItemMeta(headMeta);
+            position += 2;
+            if (position == 18) {
+                position += 10;
+                socialsInventory.setItem(position, head);
+            } else {
+                socialsInventory.setItem(position, head);
+                if (position == 32) {
+                    isLast = true;
+                }
             }
 
 
+        }
+        if (isLast) {
+            ItemStack head = CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzQzYTNiY2JiZTRmZGEwY2ZjNTM4MGJhOGRiMThkMGRiZGU5NTNmODAzNTM3NmY2YjRkMzk3OWY2ODRkNWIwZCJ9fX0=");
+            ItemMeta headMeta = head.getItemMeta();
+            headMeta.setDisplayName("Linktree");
+            headMeta.setLore(Collections.singletonList("Linktree"));
+            head.setItemMeta(headMeta);
+            socialsInventory.setItem(34, head );
         }
 
 

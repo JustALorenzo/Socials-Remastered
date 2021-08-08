@@ -1,5 +1,6 @@
 package me.justalorenzo.socials.gui;
 
+import com.google.common.collect.BiMap;
 import net.minecraft.server.v1_8_R3.MojangsonParser;
 import net.minecraft.server.v1_8_R3.NBTTagCompound;
 import org.bukkit.Bukkit;
