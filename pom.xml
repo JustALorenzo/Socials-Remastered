@@ -45,6 +45,12 @@
         <scope>provided</scope>
     </dependency>
 
+    <dependency>
+        <groupId>com.github.johnnyjayjay</groupId>
+        <artifactId>compatre</artifactId>
+        <version>v0.2.2-alpha</version>
+    </dependency>
+
 
 </dependencies>
 
@@ -55,6 +61,11 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
 
+
+            <repository>
+                <id>jitpack.io</id>
+                <url>https://jitpack.io</url>
+            </repository>
 
 
     </repositories>

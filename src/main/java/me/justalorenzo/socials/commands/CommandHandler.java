@@ -31,7 +31,7 @@ public class CommandHandler implements CommandExecutor {
         for (String cmd : commandList) {
             if (command.getName().equalsIgnoreCase(cmd)) {
                 TextComponent message = new TextComponent(plugin.getConfig().get("prefix") + plugin.getConfig().get(cmd).toString() + plugin.getConfig().get("suffix"));
-                message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, (String) plugin.getConfig().get(cmd)));
+                message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, (String) plugin.getConfig().get(cmd) ));
                 message.setHoverEvent( new HoverEvent( HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Check out our " + cmd).create()));
 
                 Player p = (Player) commandSender;

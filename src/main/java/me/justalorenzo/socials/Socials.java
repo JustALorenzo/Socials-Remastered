@@ -1,6 +1,7 @@
 package me.justalorenzo.socials;
 
 
+import com.github.johnnyjayjay.compatre.NmsClassLoader;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
@@ -18,7 +19,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 @Singleton
 public class Socials extends JavaPlugin {
 
-
+    static {
+        NmsClassLoader.loadNmsDependents(Socials.class); // loads all nms dependents of this plugin
+    }
     public static final String[] COMMAND_LINK_LIST = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch",
             "github", "spotify", "steam", "reddit", "instagram", "linktree", "patreon", "website"};
     public static final String SET_COMMAND = "setlink";

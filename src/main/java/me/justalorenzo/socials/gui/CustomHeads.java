@@ -1,6 +1,8 @@
 package me.justalorenzo.socials.gui;
 
-import com.google.common.collect.BiMap;
+
+
+import com.github.johnnyjayjay.compatre.NmsDependent;
 import net.minecraft.server.v1_8_R3.MojangsonParser;
 import net.minecraft.server.v1_8_R3.NBTTagCompound;
 import org.bukkit.Bukkit;
@@ -26,8 +28,9 @@ import java.util.UUID;
  * @author JohnnyJayJay (https://github.com/johnnyjayjay)
  */
 // Comment the line below in if you use compatre
-//@NmsDependent
+@NmsDependent
 public class CustomHeads {
+
 
     /* Since version 1.16.1, UUIDs in NBT tags are no longer serialised as strings,
        but as an int array of 4 x 32 bits, going from most significant to least significant
