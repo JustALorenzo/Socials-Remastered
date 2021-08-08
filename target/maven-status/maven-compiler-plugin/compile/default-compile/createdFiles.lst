@@ -1,0 +1,8 @@
+me\justalorenzo\socials\commands\ConfigCommands.class
+me\justalorenzo\socials\gui\CreateGUI.class
+me\justalorenzo\socials\gui\CustomHeads.class
+me\justalorenzo\socials\gui\OpenGUI.class
+me\justalorenzo\socials\commands\CommandHandler.class
+me\justalorenzo\socials\gui\InventoryClick.class
+me\justalorenzo\socials\SimpleBinderModule.class
+me\justalorenzo\socials\Socials.class

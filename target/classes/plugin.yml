@@ -1,0 +1,66 @@
+name: Socials
+main: me.justalorenzo.socials.Socials
+version: 1.0
+
+commands:
+  youtube:
+    usage: </command>
+    description: youtube link
+    aliases: [yt]
+  facebook:
+    usage: </command>
+    description: facebook link
+    aliases: [fb]
+  twitter:
+    usage: </command>
+    description: twitter link
+  tiktok:
+    usage: </command>
+    description: tiktok link
+  discord:
+    usage: </command>
+    description: discord link
+    aliases: [disc]
+  twitch:
+    usage: </command>
+    description: twitch link
+  github:
+    usage: </command>
+    description: github link
+    aliases: [git]
+  spotify:
+    usage: </command>
+    description: spotify link
+  steam:
+    usage: </command>
+    description: steam link
+  reddit:
+    usage: </command>
+    description: reddit link
+  instagram:
+    usage: </command>
+    description: instagram link
+    aliases: [ig]
+  linktree:
+    usage: </command>
+    description: linktr.ee link
+  setlink:
+    usage: </command>
+    description: set [discord|tiktok|twitter|....] "www.example.com"
+  website:
+    usage: </command>
+    description:  personal website
+  patreon:
+    usage: </command>
+    description: patreon
+  socials:
+    usage: </command>
+    description: opens a GUI with your socials.
+  info:
+    usage: </command>
+    description: info about the plugin.
+
+permissions:
+  socials.set:
+    description:  Set social links
+    default: op
