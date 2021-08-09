@@ -94,8 +94,8 @@ public class CreateGUI {
         if (isLast) {
             ItemStack head = CustomHeads.create("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzQzYTNiY2JiZTRmZGEwY2ZjNTM4MGJhOGRiMThkMGRiZGU5NTNmODAzNTM3NmY2YjRkMzk3OWY2ODRkNWIwZCJ9fX0=");
             ItemMeta headMeta = head.getItemMeta();
-            headMeta.setDisplayName("Linktree");
-            headMeta.setLore(Collections.singletonList("Linktree"));
+            headMeta.setDisplayName(ChatColor.WHITE +"Linktree");
+            headMeta.setLore(Collections.singletonList(ChatColor.YELLOW + "Check out our other links..."));
             head.setItemMeta(headMeta);
             socialsInventory.setItem(34, head);
         }

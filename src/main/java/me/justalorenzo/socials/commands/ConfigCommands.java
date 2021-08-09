@@ -45,14 +45,14 @@ public class ConfigCommands implements CommandExecutor {
                     if (foundSocials) {
                         //go to config & edit it
 
-                        plugin.getConfig().set(args[0], args[1]);
+                        plugin.getConfig().set(args[0] + ".link", args[1]);
                         plugin.saveConfig();
                         commandSender.sendMessage(ChatColor.GREEN + args[1] + " has been set!");
 
 
                     } else {
                         //tell them we couldn't find  args[1]
-                        commandSender.sendMessage(ChatColor.BLUE + "We do not support " + args[0] + " as of now, please suggest it if you want it added!");
+                        commandSender.sendMessage(ChatColor.BLUE + "We do not support " + args[0] + " as of now, please use linktree if you want it added!");
                     }
 
 

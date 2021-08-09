@@ -20,8 +20,7 @@ public class InventoryClick implements Listener {
     private Socials plugin;
 
     String[] commands = Socials.COMMAND_LINK_LIST;
-
-
+    String linktreeText = ChatColor.WHITE + "Linktree";
     public InventoryClick(Socials plugin) {
         this.plugin = plugin;
     }
@@ -46,7 +45,7 @@ public class InventoryClick implements Listener {
                 return;
             }
             //this will always fire IF it is this plugin's
-            else if (inv.getItem(34).getItemMeta().getDisplayName().equalsIgnoreCase("linktree")) {
+            else if (inv.getItem(34).getItemMeta().getDisplayName().equalsIgnoreCase(linktreeText)) {
                 if (e.getCurrentItem().getType() == Material.SKULL_ITEM) { //IF THEY CLICK A HEAD
 
                     String commandName = e.getCurrentItem().getItemMeta().getDisplayName();
