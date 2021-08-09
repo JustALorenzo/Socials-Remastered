@@ -48,6 +48,9 @@ public class OpenGUI implements CommandExecutor {
 
 
         BiMap<String, String> name_base64Texture = HashBiMap.create(temp_map);
+        //glass panes
+        GUI.fillGUI();
+        //custom heads
         GUI.addItem(name_base64Texture);
     }
 

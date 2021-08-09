@@ -33,9 +33,15 @@ public class CommandHandler implements CommandExecutor {
                 TextComponent message = new TextComponent(plugin.getConfig().get("prefix") + plugin.getConfig().get(cmd).toString() + plugin.getConfig().get("suffix"));
                 message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, (String) plugin.getConfig().get(cmd) ));
                 message.setHoverEvent( new HoverEvent( HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Check out our " + cmd).create()));
+                if(!(commandSender instanceof Player)) {
+                    commandSender.sendMessage(message.getText());
+                }
+                else {
+                    Player p = (Player) commandSender;
 
-                Player p = (Player) commandSender;
-                p.spigot().sendMessage(message);
+                    p.spigot().sendMessage(message);
+                }
+
                 return true;
             }
         }

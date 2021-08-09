@@ -5,6 +5,7 @@ import com.google.common.collect.BiMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -73,6 +74,20 @@ public class CreateGUI {
 
 
     }
+
+    public void fillGUI() {
+
+        ItemStack black_glass_pane = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
+        ItemMeta black_glass_paneMeta = black_glass_pane.getItemMeta();;
+        black_glass_paneMeta.setDisplayName(ChatColor.stripColor("Pane"));
+        black_glass_pane.setItemMeta(black_glass_paneMeta);
+        for(int i = 0; i < 54; i++) {
+            socialsInventory.setItem(i, black_glass_pane);
+        }
+
+    }
+
+
 
     public Inventory showGUI() {
         return socialsInventory;
