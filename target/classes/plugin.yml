@@ -7,16 +7,9 @@ commands:
     usage: </command>
     description: youtube link
     aliases: [yt]
-  facebook:
-    usage: </command>
-    description: facebook link
-    aliases: [fb]
   twitter:
     usage: </command>
     description: twitter link
-  tiktok:
-    usage: </command>
-    description: tiktok link
   discord:
     usage: </command>
     description: discord link
@@ -24,19 +17,6 @@ commands:
   twitch:
     usage: </command>
     description: twitch link
-  github:
-    usage: </command>
-    description: github link
-    aliases: [git]
-  spotify:
-    usage: </command>
-    description: spotify link
-  steam:
-    usage: </command>
-    description: steam link
-  reddit:
-    usage: </command>
-    description: reddit link
   instagram:
     usage: </command>
     description: instagram link

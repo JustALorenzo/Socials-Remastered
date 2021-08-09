@@ -22,8 +22,9 @@ public class Socials extends JavaPlugin {
     static {
         NmsClassLoader.loadNmsDependents(Socials.class); // loads all nms dependents of this plugin
     }
-    public static final String[] COMMAND_LINK_LIST = {"youtube", "facebook", "twitter", "tiktok", "discord", "twitch",
-            "github", "spotify", "steam", "reddit", "instagram", "linktree", "patreon", "website"};
+
+    public static final String[] COMMAND_LINK_LIST = {"youtube", "twitter",  "discord", "twitch",
+             "instagram", "linktree", "patreon", "website"};
     public static final String SET_COMMAND = "setlink";
     public static final String SOCIALS_COMMAND = "socials";
 
@@ -49,7 +50,7 @@ public class Socials extends JavaPlugin {
         initializeCommands();
         this.saveDefaultConfig(); //will make config.yml
 
-        this.getServer().getPluginManager().registerEvents(new InventoryClick(this), this );
+        this.getServer().getPluginManager().registerEvents(new InventoryClick(this), this);
 
     }
 
@@ -57,7 +58,7 @@ public class Socials extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("info")) {
             sender.sendMessage("Lightweight optimized & open source plugin to list your socials!");
-            sender.sendMessage("Made by https://github.com/TheRealBeaver");
+            sender.sendMessage("Made by https://github.com/JustALorenzo");
         }
         return true;
     }

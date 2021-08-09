@@ -3,6 +3,8 @@ package me.justalorenzo.socials.gui;
 
 import com.google.common.collect.BiMap;
 
+import com.google.inject.Inject;
+import me.justalorenzo.socials.Socials;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -17,8 +19,22 @@ import java.util.Map;
 
 public class CreateGUI {
 
+
+    private Socials plugin;
+
+    @Inject
+    public CreateGUI(Socials plugin) {
+        this.plugin = plugin;
+    }
+
+
     Inventory socialsInventory;
     int GUISize;
+
+
+
+
+
 
 
     //sets basic GUI information
@@ -45,10 +61,22 @@ public class CreateGUI {
         boolean isLast = false;
         for (Map.Entry<String, String> content : name_value.entrySet()) {
 
-            ItemStack head = CustomHeads.create(content.getValue().toString());
+            String base64 = content.getValue();
+            String commandName = ChatColor.stripColor(content.getKey());
+            String availabilityPath = commandName.toLowerCase() + ".available";
+            boolean isAvailable = plugin.getConfig().getBoolean(availabilityPath);
+            plugin.getLogger().info(commandName + " is " + isAvailable);
+            //for example .create YouTube
+            ItemStack head = CustomHeads.create(base64);
             ItemMeta headMeta = head.getItemMeta();
             headMeta.setDisplayName(content.getKey());
-            headMeta.setLore(Collections.singletonList(ChatColor.GREEN + "Available!"));
+            if(isAvailable) {
+                headMeta.setLore(Collections.singletonList(ChatColor.GREEN + "Available!"));
+            }
+            else {
+                headMeta.setLore(Collections.singletonList(ChatColor.RED + "Unavailable!"));
+            }
+
             head.setItemMeta(headMeta);
             position += 2;
             if (position == 18) {
@@ -69,7 +97,7 @@ public class CreateGUI {
             headMeta.setDisplayName("Linktree");
             headMeta.setLore(Collections.singletonList("Linktree"));
             head.setItemMeta(headMeta);
-            socialsInventory.setItem(34, head );
+            socialsInventory.setItem(34, head);
         }
 
 
@@ -78,15 +106,15 @@ public class CreateGUI {
     public void fillGUI() {
 
         ItemStack black_glass_pane = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
-        ItemMeta black_glass_paneMeta = black_glass_pane.getItemMeta();;
+        ItemMeta black_glass_paneMeta = black_glass_pane.getItemMeta();
+
         black_glass_paneMeta.setDisplayName(ChatColor.stripColor("Pane"));
         black_glass_pane.setItemMeta(black_glass_paneMeta);
-        for(int i = 0; i < 54; i++) {
+        for (int i = 0; i < 54; i++) {
             socialsInventory.setItem(i, black_glass_pane);
         }
 
     }
-
 
 
     public Inventory showGUI() {

@@ -1,7 +1,6 @@
 package me.justalorenzo.socials.gui;
 
 
-
 import com.github.johnnyjayjay.compatre.NmsDependent;
 import net.minecraft.server.v1_8_R3.MojangsonParser;
 import net.minecraft.server.v1_8_R3.NBTTagCompound;
@@ -15,14 +14,14 @@ import java.util.UUID;
 
 /**
  * Class with a utility method to get custom heads as ItemStacks with Spigot.
- * The code below can easily be adjusted to work with any version 
+ * The code below can easily be adjusted to work with any version
  * (only the craftbukkit/nms package names and perhaps the material need to be changed).
- *
+ * <p>
  * If you want to compile it once and be compatible with any version, you only need to
- * find a way around the obfuscated packages. You can either use reflection for this 
+ * find a way around the obfuscated packages. You can either use reflection for this
  * (as is common practice), or <a href="https://github.com/johnnyjayjay/compatre">compatre</a>
  * (much simpler).
- *
+ * <p>
  * As it stands, the code is compiled against 1.8.8.
  *
  * @author JohnnyJayJay (https://github.com/johnnyjayjay)

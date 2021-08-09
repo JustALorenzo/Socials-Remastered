@@ -66,24 +66,7 @@ public class InventoryClick implements Listener {
                 e.setCancelled(true);
 
 
-            }
-
-            //this ONLY works in 1.8.8
-//           else if (inv.getTitle().equalsIgnoreCase("Socials")) {
-//                String commandName = e.getCurrentItem().getItemMeta().getDisplayName();
-//                commandName = ChatColor.stripColor(commandName);
-//
-//                for (String cmd : commands) {
-//                    if (cmd.equalsIgnoreCase(commandName)) {
-//                        Player p = (Player) e.getWhoClicked();
-//                        p.performCommand(commandName);
-//                    }
-//                }
-//
-//
-//                e.setCancelled(true);
-//            }
-            else {
+            } else {
                 return;
             }
         }

@@ -6,6 +6,7 @@ import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -30,13 +31,21 @@ public class CommandHandler implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
         for (String cmd : commandList) {
             if (command.getName().equalsIgnoreCase(cmd)) {
-                TextComponent message = new TextComponent(plugin.getConfig().get("prefix") + plugin.getConfig().get(cmd).toString() + plugin.getConfig().get("suffix"));
-                message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, (String) plugin.getConfig().get(cmd) ));
-                message.setHoverEvent( new HoverEvent( HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Check out our " + cmd).create()));
-                if(!(commandSender instanceof Player)) {
+
+                String prefixPath = plugin.getConfig().getString("prefix");
+                String linkPath = plugin.getConfig().getString(cmd + ".link");
+                String suffixPath = plugin.getConfig().getString("suffix");
+                String msg = prefixPath + linkPath + suffixPath;
+                plugin.getLogger().info(msg);
+                TextComponent message = new TextComponent(msg);
+                message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, plugin.getConfig().getString(cmd + ".link")));
+
+                String cmdCapitalized = cmd;
+                cmdCapitalized = cmdCapitalized.substring(0, 1).toUpperCase() + cmdCapitalized.substring(1);
+                message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Check out our " + (ChatColor.UNDERLINE + cmdCapitalized) + ChatColor.stripColor("!")).create()));
+                if (!(commandSender instanceof Player)) {
                     commandSender.sendMessage(message.getText());
-                }
-                else {
+                } else {
                     Player p = (Player) commandSender;
 
                     p.spigot().sendMessage(message);
