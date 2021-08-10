@@ -37,11 +37,14 @@ public class InventoryClick implements Listener {
 
             return;
         } else {
-            if (!(e.getCurrentItem().hasItemMeta())) {
+            if (!(e.getCurrentItem().hasItemMeta()) ) {
                 //player clicked something with no CUSTOM meta.
                 return;
             }
-            if (inv.getItem(34) == null) {
+            else if(inv.getSize() < 54) {
+                return;
+            }
+            else if (inv.getItem(34) == null) {
                 return;
             }
             //this will always fire IF it is this plugin's
@@ -71,5 +74,6 @@ public class InventoryClick implements Listener {
         }
 
     }
+
 }
 
