@@ -65,7 +65,7 @@ public class CreateGUI {
             String commandName = ChatColor.stripColor(content.getKey());
             String availabilityPath = commandName.toLowerCase() + ".available";
             boolean isAvailable = plugin.getConfig().getBoolean(availabilityPath);
-            plugin.getLogger().info(commandName + " is " + isAvailable);
+
             //for example .create YouTube
             ItemStack head = CustomHeads.create(base64);
             ItemMeta headMeta = head.getItemMeta();
