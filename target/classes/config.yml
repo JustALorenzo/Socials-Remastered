@@ -1,5 +1,19 @@
 prefix: ">> "
 suffix: " <<"
+
+useMySQL: true
+useConfig: false
+
+database:
+  host: localhost # host of your database
+  port: 3306 # default port for MySQL
+  databasename: db # name of your database. A database server can contain multiple databases
+  user: username
+  password: passy
+
+debugging: true
+
+
 youtube:
   link: https://youtube.com/
   available: true
