@@ -56,6 +56,7 @@ public class Socials extends JavaPlugin {
         if(isUsingMySQL) {
             try {
                 DBconnection.getConnection();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

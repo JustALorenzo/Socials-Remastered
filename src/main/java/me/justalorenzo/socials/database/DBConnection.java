@@ -14,7 +14,8 @@ public class DBConnection {
     private static String driver = "com.mysql.cj.jdbc.Driver";
     Socials plugin;
     FileConfiguration config;
-
+    Table table;
+    DataHandler dataHandler;
     final String databasePath = "database.";
 
     //database variables
@@ -50,6 +51,13 @@ public class DBConnection {
             Class.forName(driver);
             connection = DriverManager.getConnection(getUrl(), getUsername(), getPassword());
             plugin.getLogger().info("Connection to DB established");
+            table = new Table(connection);
+            table.createTable();
+            plugin.getLogger().info("Tables created if they weren't before");
+            dataHandler = new DataHandler(connection);
+            dataHandler.insertData(new String[]{"youtube","https://youtube.com/pewdiepie"});
+            plugin.getLogger().info("Inserted basic values into DB!");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
