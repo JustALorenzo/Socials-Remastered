@@ -26,7 +26,10 @@ commands:
     description: linktr.ee link
   setlink:
     usage: </command>
-    description: set [discord|tiktok|twitter|....] "www.example.com"
+    description: set [platform] [link] [id]
+  removeplatform:
+    usage: </command>
+    description: remove [platform]
   website:
     usage: </command>
     description:  personal website
@@ -43,4 +46,7 @@ commands:
 permissions:
   socials.set:
     description:  Set social links
+    default: op
+  socials.remove:
+    description: Remove social links
     default: op

@@ -23,4 +23,17 @@ public class DataHandler {
         }
     }
 
+    public void deleteData(String[] args) {
+        String platform = args[0];
+        try {
+            String sql = "DELETE FROM socials WHERE platform = '"+ platform + "' AND id <> 0;";
+            PreparedStatement dataToDelete = DBConnection.connection.prepareStatement(sql);
+            dataToDelete.executeUpdate();
+            System.out.println("Deleting: " + platform );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
