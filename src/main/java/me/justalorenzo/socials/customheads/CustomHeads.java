@@ -1,4 +1,4 @@
-package me.justalorenzo.socials.gui;
+package me.justalorenzo.socials.customheads;
 
 
 import com.github.johnnyjayjay.compatre.NmsDependent;

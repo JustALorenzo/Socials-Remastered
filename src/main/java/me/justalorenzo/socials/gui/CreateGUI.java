@@ -5,6 +5,7 @@ import com.google.common.collect.BiMap;
 
 import com.google.inject.Inject;
 import me.justalorenzo.socials.Socials;
+import me.justalorenzo.socials.customheads.CustomHeads;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

@@ -4,6 +4,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+
 //A binding is defined in an implementation of com.google.inject.AbstractModule
 public class SimpleBinderModule extends AbstractModule {
     private final Socials plugin;
@@ -13,6 +14,7 @@ public class SimpleBinderModule extends AbstractModule {
     // this is also some kind of dependency injection as in we inject plugin in the constructor
     public SimpleBinderModule(Socials plugin) {
         this.plugin = plugin;
+
 
     }
 

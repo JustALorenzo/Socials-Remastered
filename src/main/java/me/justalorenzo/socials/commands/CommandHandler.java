@@ -30,6 +30,7 @@ public class CommandHandler implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
+
         for (String cmd : commandList) {
             if (command.getName().equalsIgnoreCase(cmd)) {
                 //get basic paths

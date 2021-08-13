@@ -1,5 +1,5 @@
 me\justalorenzo\socials\database\DataHandler.class
-me\justalorenzo\socials\gui\CustomHeads.class
+me\justalorenzo\socials\customheads\CustomHeads.class
 me\justalorenzo\socials\commands\CommandHandler.class
 me\justalorenzo\socials\gui\InventoryClick.class
 me\justalorenzo\socials\Socials.class

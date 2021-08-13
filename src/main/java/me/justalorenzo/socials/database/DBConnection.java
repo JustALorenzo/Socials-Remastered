@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    private static Connection connection;
+    public static Connection connection;
     private static String driver = "com.mysql.cj.jdbc.Driver";
     Socials plugin;
     FileConfiguration config;
@@ -46,7 +46,7 @@ public class DBConnection {
     }
 
 
-    public Connection getConnection() throws Exception {
+    public Connection getConnection()  {
         try {
             Class.forName(driver);
             connection = DriverManager.getConnection(getUrl(), getUsername(), getPassword());
@@ -54,8 +54,8 @@ public class DBConnection {
             table = new Table(connection);
             table.createTable();
             plugin.getLogger().info("Tables created if they weren't before");
-            dataHandler = new DataHandler(connection);
-            dataHandler.insertData(new String[]{"youtube","https://youtube.com/pewdiepie"});
+            dataHandler = new DataHandler();
+           // dataHandler.insertData(new String[]{"youtube","https://youtube.com/pewdiepie"});
             plugin.getLogger().info("Inserted basic values into DB!");
 
         } catch (Exception e) {
