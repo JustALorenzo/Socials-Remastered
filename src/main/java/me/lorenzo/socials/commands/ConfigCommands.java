@@ -1,10 +1,10 @@
-package me.justalorenzo.socials.commands;
+package me.lorenzo.socials.commands;
 
 import com.google.inject.Inject;
 
-import me.justalorenzo.socials.Socials;
+import me.lorenzo.socials.Socials;
 
-import me.justalorenzo.socials.database.DataHandler;
+import me.lorenzo.socials.database.DataHandler;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

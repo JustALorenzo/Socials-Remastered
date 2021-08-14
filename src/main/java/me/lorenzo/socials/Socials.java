@@ -1,17 +1,17 @@
-package me.justalorenzo.socials;
+package me.lorenzo.socials;
 
 
 import com.github.johnnyjayjay.compatre.NmsClassLoader;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
-import me.justalorenzo.socials.commands.CommandHandler;
-import me.justalorenzo.socials.commands.ConfigCommands;
+import me.lorenzo.socials.commands.CommandHandler;
+import me.lorenzo.socials.commands.ConfigCommands;
 
 
-import me.justalorenzo.socials.database.DBConnection;
-import me.justalorenzo.socials.gui.InventoryClick;
-import me.justalorenzo.socials.gui.OpenGUI;
+import me.lorenzo.socials.database.DBConnection;
+import me.lorenzo.socials.gui.InventoryClick;
+import me.lorenzo.socials.gui.OpenGUI;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -96,7 +96,7 @@ public class Socials extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("info")) {
             sender.sendMessage("Lightweight optimized & open source plugin to list your socials!");
-            sender.sendMessage("Made by https://github.com/JustALorenzo");
+            sender.sendMessage("Made by https://github.com/lorenzo");
         }
         return true;
     }

@@ -1,7 +1,7 @@
-package me.justalorenzo.socials.commands;
+package me.lorenzo.socials.commands;
 
 import com.google.inject.Inject;
-import me.justalorenzo.socials.Socials;
+import me.lorenzo.socials.Socials;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;

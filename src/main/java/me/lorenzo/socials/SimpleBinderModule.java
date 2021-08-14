@@ -1,4 +1,4 @@
-package me.justalorenzo.socials;
+package me.lorenzo.socials;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
